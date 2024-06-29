@@ -16,7 +16,7 @@
 /**
  * Commands helper for the Moodle tiny_fontcase plugin.
  *
- * @module      plugintype_pluginname/commands
+ * @module      tiny_fontcase/commands
  * @copyright   2024 Your Name <you@example.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

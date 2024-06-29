@@ -16,7 +16,7 @@
 /**
  * Common values helper for the Moodle tiny_fontcase plugin.
  *
- * @module      plugintype_pluginname/common
+ * @module      tiny_fontcase/common
  * @copyright   2024 Your Name <you@example.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

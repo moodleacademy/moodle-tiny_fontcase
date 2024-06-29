@@ -26,5 +26,5 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_fontcase';
 $plugin->release = '0.1.0';
-$plugin->version = 2024062900;
+$plugin->version = 2024060900;
 $plugin->requires = 2022112800;

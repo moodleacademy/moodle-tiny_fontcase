@@ -16,7 +16,7 @@
 /**
  * Tiny tiny_fontcase for Moodle.
  *
- * @module      plugintype_pluginname/plugin
+ * @module      tiny_fontcase/plugin
  * @copyright   2024 Your Name <you@example.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,6 +30,7 @@ import {getSetup as getCommandSetup} from './commands';
 import * as Configuration from './configuration';
 
 // Setup the tiny_fontcase Plugin.
+// eslint-disable-next-line no-async-promise-executor
 export default new Promise(async(resolve) => {
     // Note: The PluginManager.add function does not support asynchronous configuration.
     // Perform any asynchronous configuration here, and then call the PluginManager.add function.

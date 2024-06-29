@@ -16,7 +16,7 @@
 /**
  * Tiny tiny_fontcase for Moodle.
  *
- * @module      plugintype_pluginname/plugin
+ * @module      tiny_fontcase/configuration
  * @copyright   2024 Your Name <you@example.com>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
