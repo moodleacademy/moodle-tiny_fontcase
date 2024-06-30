@@ -28,5 +28,6 @@ export default {
     pluginName: `${component}/plugin`,
     icon: component,
     uppercaseButtonName: `${component}_uppercase`,
+    lowercaseButtonName: `${component}_lowercase`,
     changecaseMenuItemName: `${component}_changecase`,
 };

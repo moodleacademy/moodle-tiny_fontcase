@@ -26,6 +26,7 @@ import {get_string as getString} from 'core/str';
 import {
     component,
     uppercaseButtonName,
+    lowercaseButtonName,
     changecaseMenuItemName,
     icon,
 } from './common';
@@ -62,27 +63,38 @@ const changeCase = (editor, toCase) => {
  */
 export const getSetup = async() => {
     const [
-        uppercaseButtonNameTitle,
         changecaseMenuItemNameTitle,
         uppercaseTitle,
         lowercaseTitle,
         buttonImage,
+        uppercaseImage,
+        lowercaseImage,
     ] = await Promise.all([
-        getString('button_uppercase', component),
         getString('menuitem_changecase', component),
         getString('uppercase', component),
         getString('lowercase', component),
         getButtonImage('icon', component),
+        getButtonImage('uppercase', component),
+        getButtonImage('lowercase', component),
     ]);
 
     return (editor) => {
         // Register the Moodle SVG as an icon suitable for use as a TinyMCE toolbar button.
         editor.ui.registry.addIcon(icon, buttonImage.html);
+        editor.ui.registry.addIcon('lowercaseIcon', lowercaseImage.html);
+        editor.ui.registry.addIcon('uppercaseIcon', uppercaseImage.html);
+
+        // Register the lowercase Toolbar Button.
+        editor.ui.registry.addButton(lowercaseButtonName, {
+            icon: 'lowercaseIcon',
+            tooltip: lowercaseTitle,
+            onAction: () => changeCase(editor, 'lowercase'),
+        });
 
         // Register the uppercase Toolbar Button.
         editor.ui.registry.addButton(uppercaseButtonName, {
-            icon,
-            tooltip: uppercaseButtonNameTitle,
+            icon: 'uppercaseIcon',
+            tooltip: uppercaseTitle,
             onAction: () => changeCase(editor, 'uppercase'),
         });
 

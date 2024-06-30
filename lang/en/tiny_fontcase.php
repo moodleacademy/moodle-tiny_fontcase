@@ -26,6 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['button_uppercase'] = 'Uppercase';
+$string['button_lowercase'] = 'Lowercase';
 $string['menuitem_changecase'] = 'Change case';
 $string['pluginname'] = 'Font case';
 $string['privacy:metadata'] = 'Font case does not store any personal data';

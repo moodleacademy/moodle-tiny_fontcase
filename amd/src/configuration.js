@@ -23,6 +23,7 @@
 
 import {
     uppercaseButtonName,
+    lowercaseButtonName,
     changecaseMenuItemName,
 } from './common';
 
@@ -34,6 +35,7 @@ import {
 const getToolbarConfiguration = (instanceConfig) => {
     let toolbar = instanceConfig.toolbar;
     toolbar = addToolbarButtons(toolbar, 'content', [
+        lowercaseButtonName,
         uppercaseButtonName,
     ]);
 
