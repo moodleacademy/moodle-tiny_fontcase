@@ -40,6 +40,28 @@ const handleAction = (editor) => {
 };
 
 /**
+ * Handle the action for your plugin.
+ * @param {TinyMCE.editor} editor The tinyMCE editor instance.
+ * @param {string} toCase Change font case to.
+ */
+const changeCase = (editor, toCase) => {
+    // TODO: This would change the case of the html tags as well.
+    // But the TinyMCE editor should correct that automatically.
+    let selectedText = editor.selection.getContent();
+
+    switch (toCase) {
+        case 'uppercase':
+            selectedText = selectedText.toUpperCase();
+            editor.selection.setContent(selectedText);
+        break;
+        case 'lowercase':
+            selectedText = selectedText.toLowerCase();
+            editor.selection.setContent(selectedText);
+        break;
+    }
+};
+
+/**
  * Get the setup function for the buttons.
  *
  * This is performed in an async function which ultimately returns the registration function as the
@@ -66,7 +88,7 @@ export const getSetup = async() => {
         editor.ui.registry.addButton(uppercaseButtonName, {
             icon,
             tooltip: uppercaseButtonNameTitle,
-            onAction: () => handleAction(editor),
+            onAction: () => changeCase(editor, 'uppercase'),
         });
 
         // Add the changecase Menu Item.

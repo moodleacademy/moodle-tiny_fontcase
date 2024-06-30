@@ -33,7 +33,7 @@ import {
 
 const getToolbarConfiguration = (instanceConfig) => {
     let toolbar = instanceConfig.toolbar;
-    toolbar = addToolbarButtons(toolbar, 'format', [
+    toolbar = addToolbarButtons(toolbar, 'content', [
         uppercaseButtonName,
     ]);
 
@@ -42,7 +42,7 @@ const getToolbarConfiguration = (instanceConfig) => {
 
 const getMenuConfiguration = (instanceConfig) => {
     let menu = instanceConfig.menu;
-    menu = addMenubarItem(menu, 'file', [
+    menu = addMenubarItem(menu, 'format', [
         changecaseMenuItemName,
     ].join(' '));
 
