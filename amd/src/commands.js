@@ -33,15 +33,6 @@ import {
 /**
  * Handle the action for your plugin.
  * @param {TinyMCE.editor} editor The tinyMCE editor instance.
- */
-const handleAction = (editor) => {
-    // TODO Handle the action.
-    window.console.log(editor);
-};
-
-/**
- * Handle the action for your plugin.
- * @param {TinyMCE.editor} editor The tinyMCE editor instance.
  * @param {string} toCase Change font case to.
  */
 const changeCase = (editor, toCase) => {
@@ -73,10 +64,14 @@ export const getSetup = async() => {
     const [
         uppercaseButtonNameTitle,
         changecaseMenuItemNameTitle,
+        uppercaseTitle,
+        lowercaseTitle,
         buttonImage,
     ] = await Promise.all([
         getString('button_uppercase', component),
         getString('menuitem_changecase', component),
+        getString('uppercase', component),
+        getString('lowercase', component),
         getButtonImage('icon', component),
     ]);
 
@@ -93,10 +88,21 @@ export const getSetup = async() => {
 
         // Add the changecase Menu Item.
         // This allows it to be added to a standard menu, or a context menu.
-        editor.ui.registry.addMenuItem(changecaseMenuItemName, {
+        editor.ui.registry.addNestedMenuItem(changecaseMenuItemName, {
             icon,
             text: changecaseMenuItemNameTitle,
-            onAction: () => handleAction(editor),
+            getSubmenuItems: () => [
+                {
+                    type: 'menuitem',
+                    text: lowercaseTitle,
+                    onAction: () => changeCase(editor, 'lowercase'),
+                },
+                {
+                    type: 'menuitem',
+                    text: uppercaseTitle,
+                    onAction: () => changeCase(editor, 'uppercase'),
+                }
+            ]
         });
     };
 };

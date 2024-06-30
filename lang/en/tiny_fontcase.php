@@ -29,3 +29,5 @@ $string['button_uppercase'] = 'Uppercase';
 $string['menuitem_changecase'] = 'Change case';
 $string['pluginname'] = 'Font case';
 $string['privacy:metadata'] = 'Font case does not store any personal data';
+$string['uppercase'] = 'UPPERCASE';
+$string['lowercase'] = 'lowercase';
