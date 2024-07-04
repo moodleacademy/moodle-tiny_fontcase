@@ -1,8 +1,8 @@
 # Font case #
 
-TODO Describe the plugin shortly here.
+A Moodle TinyMCE subplugin to change the font case of selected text.
 
-TODO Provide more detailed description here.
+This is a sample plugin created for use in Moodle Academy courses.
 
 ## Installing via uploaded ZIP file ##
 
