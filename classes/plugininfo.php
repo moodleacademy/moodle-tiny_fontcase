@@ -54,6 +54,7 @@ class plugininfo extends plugin implements plugin_with_configuration, plugin_wit
             // Your values go here.
             // These will be mapped to a namespaced EditorOption in Tiny.
             'myFirstProperty' => 'TODO Calculate your values here',
+            'showOnToolbar' => get_config('tiny_fontcase', 'showontoolbar'),
         ];
     }
 }

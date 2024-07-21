@@ -31,6 +31,8 @@ import {
     icon,
 } from './common';
 
+import {getShowOnToolbar} from './options';
+
 /**
  * Handle the action for your plugin.
  * @param {TinyMCE.editor} editor The tinyMCE editor instance.
@@ -81,22 +83,26 @@ export const getSetup = async() => {
     return (editor) => {
         // Register the Moodle SVG as an icon suitable for use as a TinyMCE toolbar button.
         editor.ui.registry.addIcon(icon, buttonImage.html);
-        editor.ui.registry.addIcon('lowercaseIcon', lowercaseImage.html);
-        editor.ui.registry.addIcon('uppercaseIcon', uppercaseImage.html);
 
-        // Register the lowercase Toolbar Button.
-        editor.ui.registry.addButton(lowercaseButtonName, {
-            icon: 'lowercaseIcon',
-            tooltip: lowercaseTitle,
-            onAction: () => changeCase(editor, 'lowercase'),
-        });
+        // Show toolbar buttons if enabled in settings.
+        if (getShowOnToolbar(editor)) {
+            editor.ui.registry.addIcon('lowercaseIcon', lowercaseImage.html);
+            editor.ui.registry.addIcon('uppercaseIcon', uppercaseImage.html);
 
-        // Register the uppercase Toolbar Button.
-        editor.ui.registry.addButton(uppercaseButtonName, {
-            icon: 'uppercaseIcon',
-            tooltip: uppercaseTitle,
-            onAction: () => changeCase(editor, 'uppercase'),
-        });
+            // Register the lowercase Toolbar Button.
+            editor.ui.registry.addButton(lowercaseButtonName, {
+                icon: 'lowercaseIcon',
+                tooltip: lowercaseTitle,
+                onAction: () => changeCase(editor, 'lowercase'),
+            });
+
+            // Register the uppercase Toolbar Button.
+            editor.ui.registry.addButton(uppercaseButtonName, {
+                icon: 'uppercaseIcon',
+                tooltip: uppercaseTitle,
+                onAction: () => changeCase(editor, 'uppercase'),
+            });
+        }
 
         // Add the changecase Menu Item.
         // This allows it to be added to a standard menu, or a context menu.

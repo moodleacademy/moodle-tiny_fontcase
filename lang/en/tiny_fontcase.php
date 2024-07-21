@@ -32,3 +32,5 @@ $string['pluginname'] = 'Font case';
 $string['privacy:metadata'] = 'Font case does not store any personal data';
 $string['uppercase'] = 'UPPERCASE';
 $string['lowercase'] = 'lowercase';
+$string['showontoolbar'] = 'Show on toolbar';
+$string['showontoolbar_desc'] = 'Show Fontcase buttons on TinyMCE toolbar';

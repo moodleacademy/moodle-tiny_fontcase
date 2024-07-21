@@ -30,6 +30,11 @@ if ($hassiteconfig) {
 
     // phpcs:ignore Generic.CodeAnalysis.EmptyStatement.DetectedIf
     if ($ADMIN->fulltree) {
-        // TODO: Define actual plugin settings page and add it to the tree - {@link https://docs.moodle.org/dev/Admin_settings}.
+        $name = get_string('showontoolbar', 'tiny_fontcase');
+        $desc = get_string('showontoolbar_desc', 'tiny_fontcase');
+        $default = 1; // Yes.
+        $setting = new admin_setting_configcheckbox('tiny_fontcase/showontoolbar', $name, $desc, $default);
+
+        $settings->add($setting);
     }
 }

@@ -26,6 +26,7 @@ import {pluginName} from './common';
 
 // Helper variables for the option names.
 const myFirstPropertyName = getPluginOptionName(pluginName, 'myFirstProperty');
+const showOnToolbarName = getPluginOptionName(pluginName, 'showOnToolbar');
 
 /**
  * Options registration function.
@@ -40,6 +41,10 @@ export const register = (editor) => {
     registerOption(myFirstPropertyName, {
         processor: 'string',
     });
+
+    registerOption(showOnToolbarName, {
+        processor: 'string',
+    });
 };
 
 /**
@@ -49,3 +54,13 @@ export const register = (editor) => {
  * @returns {object} The value of the myFirstProperty option
  */
 export const getMyFirstProperty = (editor) => editor.options.get(myFirstPropertyName);
+
+/**
+ * Fetch the showOnToolbar value for this editor instance.
+ *
+ * @param {tinyMCE} editor The editor instance to fetch the value for
+ * @returns {object} The value of the showOnToolbar option
+ */
+export const getShowOnToolbar = function(editor) {
+    return (editor.options.get(showOnToolbarName) == '1') ? true : false;
+};
