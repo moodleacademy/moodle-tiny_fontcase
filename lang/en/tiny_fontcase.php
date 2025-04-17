@@ -25,13 +25,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['button_uppercase'] = 'Uppercase';
 $string['button_lowercase'] = 'Lowercase';
+$string['button_uppercase'] = 'Uppercase';
 $string['fontcase:use'] = 'Use TinyMCE Font case';
+$string['lowercase'] = 'lowercase';
 $string['menuitem_changecase'] = 'Change case';
 $string['pluginname'] = 'Font case';
 $string['privacy:metadata'] = 'Font case does not store any personal data';
-$string['uppercase'] = 'UPPERCASE';
-$string['lowercase'] = 'lowercase';
 $string['showontoolbar'] = 'Show on toolbar';
 $string['showontoolbar_desc'] = 'Show Fontcase buttons on TinyMCE toolbar';
+$string['uppercase'] = 'UPPERCASE';
